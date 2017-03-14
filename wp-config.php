@@ -54,8 +54,6 @@ if (getenv('WP_ENV') !== false) {
     define('WP_ENV', preg_replace('/[^a-z]/', '', getenv('WP_ENV')));
 } 
 
-$table_prefix  = 'wp_';
-
 // Define site host
 if (isset($_SERVER['HTTP_X_FORWARDED_HOST']) && !empty($_SERVER['HTTP_X_FORWARDED_HOST'])) {
     $hostname = $_SERVER['HTTP_X_FORWARDED_HOST'];
