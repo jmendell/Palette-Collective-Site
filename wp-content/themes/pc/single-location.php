@@ -1,0 +1,1 @@
+<?php get_template_part('templates/content-single-location', get_post_type()); ?>

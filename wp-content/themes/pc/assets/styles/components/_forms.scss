@@ -1,0 +1,49 @@
+form{
+	ul{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+}
+
+#{$all-text-inputs} {
+	appearance:none;
+	width:100%;
+	appearance:none;
+	background:$color-gray-med;
+	color:$color-white;
+	font-size:0.9em;
+	padding:1em;
+	border:none;
+	font-family:$primary;
+	margin-bottom:20px;
+	@include placeholder{
+		color:$color-white;
+		letter-spacing:3px;
+		text-transform:uppercase;
+		font-weight:100;
+	}
+}
+
+textarea{
+	margin:25px 0;
+}
+
+input[type="submit"]{
+	appearance:none;
+	font-family:$primary;
+	padding:1em 6em;
+	border:none;
+	border-radius:none;
+	background:$color-blue;
+	color:$color-white;
+	font-size:0.9em;
+	text-align:left;
+	text-transform:uppercase;
+	letter-spacing:3px;
+	font-weight:100;
+}
+
+.gfield_required, .charleft{
+	display:none;
+}

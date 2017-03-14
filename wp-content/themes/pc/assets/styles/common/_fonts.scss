@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+
+$primary:'Yanone Kaffeesatz';
+$secondary:'PT Serif';
+$thin:100;
+$lite:300;
+$regular:400;
+$bold:700;
+
+$small:.7em;
+$title:1.2em;
+$big:1.8em;
+
+body{
+	font-family:$primary;
+	font-weight:$thin;
+	-webkit-font-smoothing:antialiased;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+	margin:0;
+}
+
+p{
+	font-family:$secondary;
+	font-size:1.1em;
+}
+
+h3{
+	font-size:2em;
+	font-weight:$thin;
+	text-transform:uppercase;
+}
+
+.title{
+	font-size:5em;
+	letter-spacing:4px;
+	text-transform:uppercase;
+	font-weight:$thin;
+}
+
+.font-primary{
+	font-family:$primary;
+}

@@ -1,0 +1,67 @@
+.hero{
+	position:relative;
+	height:600px;
+}
+
+.locations{
+	.hero{
+		.title{
+			text-align:center;
+			color:$color-white;
+		}
+	}
+}
+
+$hero-min-height:700px;
+.home{
+	.hero{
+		position:relative;
+		height:100vh;
+		min-height:$hero-min-height;
+		.hero-slider{
+			overflow:hidden;
+			height:100vh;
+			width:100%;
+			z-index:-1;
+			min-height:$hero-min-height;
+			@include position(absolute, 50% null null 50%);
+			@include transform(translateY(-50%) translateX(-50%));
+			.slide{
+				height:100vh;
+				min-height:$hero-min-height;
+				figure{
+					margin:0;
+					background-size:cover;
+					background-position:center;
+					@include size(100%);
+				}
+			}
+		}
+		.pinned-bottom{
+			bottom:50px;
+		}
+		.content-container{
+			padding-top:125px;
+		}
+		.content-inner{
+			padding-left:25px;
+			max-width:450px;
+			color:$color-white;
+			h1{
+				margin-bottom:10px;
+			}
+			p{
+				margin-bottom:25px;
+			}
+			.cta-button{
+				padding:1em 5em;
+			}
+		}
+		.credit{
+			margin-bottom:15px;
+			text-transform:uppercase;
+			font-size:.9em;
+			color:$color-white;
+		}
+	}
+}

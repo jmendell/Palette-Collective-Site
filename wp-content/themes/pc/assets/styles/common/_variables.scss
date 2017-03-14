@@ -1,0 +1,27 @@
+//colors
+$color-white:#fff;
+$color-white-fade:rgba(255,255,255,.6);
+$color-black:#000;
+$color-black-soft:#1C1C1C;
+
+$color-yellow:#FED909;
+$color-blue:#26A7E1;
+
+$color-gray-lite:#F0F0F0;
+$color-gray-med:#C5C5C5;
+$color-gray-dark:#5b5b5b;
+
+//responsive settings
+$desktop-large: (min-width 1300px);
+$desktop: (min-width 801px);
+$tablet: (max-width 900px);
+$tablet-landscape: (max-width 1024px);
+$tablet-down: (max-width 900px);
+$mobile: (max-width 600px);
+$mobile-small: (max-width 350px);
+
+//grid
+$desktop-large-inner:1200px;
+$desktop-inner:90vw;
+$tablet-inner:600px;
+$mobile-inner:300px;
