@@ -4,6 +4,9 @@ form{
 		padding:0;
 		list-style:none;
 	}
+	li{
+		margin-bottom:20px;
+	}
 }
 
 #{$all-text-inputs} {
@@ -16,13 +19,28 @@ form{
 	padding:1em;
 	border:none;
 	font-family:$primary;
-	margin-bottom:20px;
 	@include placeholder{
 		color:$color-white;
 		letter-spacing:3px;
 		text-transform:uppercase;
 		font-weight:100;
 	}
+}
+
+
+select{
+	appearance:none;
+	display:block;
+	border-radius:0;
+	background:$color-gray-med;
+	color:$color-white;
+	padding:1em;
+	width:100%;
+	font-size:0.9em;
+	border:0;
+	font-size:0.95em;
+	text-transform:uppercase;
+	border:none;
 }
 
 textarea{
@@ -42,6 +60,19 @@ input[type="submit"]{
 	text-transform:uppercase;
 	letter-spacing:3px;
 	font-weight:100;
+}
+
+.ginput_container_select{
+	position:relative;
+	&:after{
+		content:'';
+		display:block;
+		border-left:2px solid $color-white;
+		border-bottom:2px solid $color-white;
+		@include size(15px);
+		@include position(absolute, 50% 25px null null);
+		@include transform(translateY(-50%) rotate(-45deg));
+	}
 }
 
 .gfield_required, .charleft{

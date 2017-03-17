@@ -21,3 +21,9 @@
 	}
 	margin:0 auto;
 }
+
+@mixin striplist ($margin:0, $padding:0) {
+	padding:$padding;
+	margin:$margin;
+	list-style:none;
+}

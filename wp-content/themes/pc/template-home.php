@@ -6,7 +6,6 @@
 
 <?php while (have_posts()) : the_post(); ?>
 	<section class="root-container">
-
 		<section class="hero">
 			<?php get_template_part('templates/section', 'hero-slider') ?>
 			<div class="content-container">
@@ -43,6 +42,5 @@
 				<?php endif; ?>
 			</div>
 		</section>
-		
 	</section>
 <?php endwhile; ?>

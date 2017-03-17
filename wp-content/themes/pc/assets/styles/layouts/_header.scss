@@ -1,7 +1,7 @@
 header{
 	width:100%;
 	padding:25px;
-	z-index:2;
+	z-index:5;
 	@include position(absolute, 0 null null 0);
 	.container{
 		display:flex;

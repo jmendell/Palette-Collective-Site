@@ -1,14 +1,10 @@
 .hero{
 	position:relative;
 	height:600px;
-}
-
-.locations{
-	.hero{
-		.title{
-			text-align:center;
-			color:$color-white;
-		}
+	color:$color-white;
+	text-align:center;
+	.credit{
+		font-size:.8em;
 	}
 }
 
@@ -41,12 +37,14 @@ $hero-min-height:700px;
 			bottom:50px;
 		}
 		.content-container{
-			padding-top:125px;
+			text-align:left;
+			@include position(absolute, 45% null null 50%);
+			@include transform(translateY(-50%) translateX(-50%));
 		}
 		.content-inner{
-			padding-left:25px;
 			max-width:450px;
 			color:$color-white;
+
 			h1{
 				margin-bottom:10px;
 			}

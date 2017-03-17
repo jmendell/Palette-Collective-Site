@@ -5,7 +5,7 @@
 	<section class="location-content">
 		<div class="content-container">
 			<div class="col">
-				<div class="sticky-cta">
+				<div class="sticky-cta" data-trigger=".location-content" data-duration="200">
 					<div class="info">
 						<?php the_title('<h3>', '</h3>'); ?>
 						<p class="address"><?php echo get_field('coordinates')['address']; ?></p>
