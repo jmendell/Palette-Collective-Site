@@ -38,17 +38,30 @@
 				</ul>
 			</section>
 		<?php endif; ?>
+
 		<?php get_template_part('templates/section', 'bullet-items') ?>
+
 		<section class="locations-preview">
-			<?php
-					$args = array( 'post_type' => 'location', 'posts_per_page' => -1);
-					$loop = new WP_Query( $args );
-				?>
-				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>  
-				<?php endwhile; 
-				// Reset Post Data
-				wp_reset_postdata();
-				?>
+			<figure class="bg" style="background-image:url(/wp-content/uploads/2017/03/map.jpg)"></figure>
+			<?php $loop = new WP_Query( array( 'post_type' => 'location', 'posts_per_page' => -1) ); ?>
+			<div class="content-container">
+				<div class="inner">
+					<h2>Locations</h2>
+					<ul>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<?php
+							$img = get_the_post_thumbnail_url();
+						?>
+						<li>
+							<figure class="bg" style="background-image:url(<?php echo $img; ?>)"></figure>
+							<a href="<?php the_permalink(); ?>">
+								<span><?php the_title(); ?></span>
+							</a>
+						</li>
+					<?php endwhile; wp_reset_postdata(); ?>
+					</ul>
+				</div>
+			</div>
 		</section>
 	</section>
 <?php endwhile; ?>
