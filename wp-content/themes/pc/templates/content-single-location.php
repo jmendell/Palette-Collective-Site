@@ -25,4 +25,65 @@
 			</div>
 		</div>
 	</section>
+	<?php
+
+		$page_id = get_the_id();
+		$args = array(
+			'post_type' => 'tenant',
+			'posts_per_page' => -1,
+			'meta_query'	=> array(
+				'relation'		=> 'AND',
+				array(
+					'key'	 	=> 'location',
+					'value'	  	=> $page_id,
+					'compare' 	=> '=',
+				)
+			)
+		);
+		$loop = new WP_Query( $args );
+		$location_has_marketplace_tenants = false;
+		$location_has_non_marketplace_tenants = false;
+
+		foreach ($loop->posts as $post) {
+			if (get_field('marketplace', $post->id)) {
+				$location_has_marketplace = true;
+			}else{
+				$location_has_non_marketplace_tenants = true;
+			}
+		}
+	?>
+	<?php if ($loop->have_posts()): ?>
+		<?php if ($location_has_marketplace): ?>
+			<section class="marketplace-tenants">
+				<div class="content-container">
+					<h2 class="section-title">Marketplace</h2>
+					<ul>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<?php if (get_field('marketplace', $post->id)): ?>
+							<li>
+								<?php the_title(); ?>
+							</li>
+						<?php endif ?> 
+					<?php endwhile; ?>
+					</ul>
+				</div>
+			</section>
+		<?php endif ?>
+		<?php if ($location_has_non_marketplace_tenants): ?>
+			<section class="location-tenants">
+				<div class="content-container">
+					<h2 class="section-title">Tenants</h2>
+					<ul>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<?php if (!get_field('marketplace', $post->id)): ?>
+							<li>
+								<?php the_title(); ?>
+							</li>
+						<?php endif ?> 
+					<?php endwhile; wp_reset_postdata(); ?>
+					</ul>
+				</div>
+			</section>
+		<?php endif ?>
+	<?php endif ?>
 <?php endwhile; ?>
