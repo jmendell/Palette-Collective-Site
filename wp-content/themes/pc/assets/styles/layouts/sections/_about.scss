@@ -7,8 +7,14 @@
 	}
 	.about-palette{
 		padding:100px 0;
+		@include media($tablet){
+			text-align:center;
+		}
 		.content{
 			max-width:60%;
+			@include media($tablet){
+				max-width:100%;
+			}
 		}
 		h3{
 			margin-bottom:25px;
@@ -34,6 +40,10 @@
 			padding:15px;
 			@include position(absolute, 50% 0 null null);
 			@include transform(translateY(-50%));
+			@include media($tablet){
+				position:relative;
+				width:100%;
+			}	
 		}
 		h2{
 			margin-bottom:25px;
@@ -41,6 +51,9 @@
 		ul{
 			display:flex;
 			@include striplist;
+			@include media($mobile){
+				flex-direction:column;
+			}	
 		}
 		li{
 			position:relative;
@@ -71,6 +84,9 @@
 			}
 			&:nth-child(2){
 				margin:0 5px;
+				@include media($mobile){
+					margin:10px 0;
+				}
 			}
 			&:after{
 				content:'';

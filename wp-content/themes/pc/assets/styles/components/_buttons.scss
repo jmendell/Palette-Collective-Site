@@ -9,12 +9,21 @@
 	font-size:0.9em;
 	line-height:.8em;
 	letter-spacing:1px;
-	transition:.5s;
+	transition:.3s;
 	z-index:1;
 	vertical-align:center;
 	&.white{
 		background:$color-white;
 		color:$color-black-soft;
+		@include media($mobile){
+			display:none;
+		}
+	}
+	@include media($desktop){
+		&:hover{
+			transform:translateX(-5px) translateY(-5px);
+			box-shadow: 5px 5px 0px $color-blue;
+		}
 	}
 }
 
@@ -30,4 +39,22 @@
 	line-height:.8em;
 	letter-spacing:1px;
 	transition:.5s;
+}
+
+.sticky-button{
+	position:fixed;
+	background:$color-white;
+	padding:1em 0;
+	color:$color-black;
+	text-transform:uppercase;
+	text-decoration:none;
+	width:100%;
+	bottom:0;
+	text-align:center;
+	@include media($desktop){
+		display:none;
+	}
+	@include media($mobile){
+		display:block;
+	}
 }

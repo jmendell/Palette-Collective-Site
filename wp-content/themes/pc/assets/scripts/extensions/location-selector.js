@@ -23,7 +23,7 @@
 
 				_Populate = function () {
 					var locations = $pc.locations;
-					var locationCollection = '<option value="Any">Any</option>';
+					var locationCollection = '<option value="Any">Pick A Location</option>';
 
 					$(locations).each(function(index, value ){
 						locationCollection += '<option value="' + value + '">' + value + '</option>';

@@ -7,9 +7,17 @@ $color-black-soft:#1C1C1C;
 $color-yellow:#FED909;
 $color-blue:#26A7E1;
 
+$color-gray:#f2f2f2;
 $color-gray-lite:#F0F0F0;
 $color-gray-med:#C5C5C5;
 $color-gray-dark:#5b5b5b;
+
+//Social Logo Colors
+$color-insta:#cd486b;
+$color-twit: #0084b4;
+$color-fb:#3b5998;
+$color-youtube:#e52d27;
+$color-link:#0077B5;
 
 //responsive settings
 $desktop-large: (min-width 1300px);
@@ -19,6 +27,7 @@ $tablet-landscape: (max-width 1024px);
 $tablet-down: (max-width 900px);
 $mobile: (max-width 600px);
 $mobile-small: (max-width 350px);
+$mobile-landscape: (max-width 670px);
 
 //grid
 $desktop-large-inner:1200px;

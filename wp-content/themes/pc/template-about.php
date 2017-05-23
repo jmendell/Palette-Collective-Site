@@ -23,15 +23,21 @@
 				
 						$bg = get_sub_field('background');
 						$icon = get_sub_field('image');
+						$title = get_sub_field('title');
+						$copy = get_sub_field('copy');
 						$i++;
 				
 						?>
 				
 						<li>
-							<a href="#bullet-<?php echo $i; ?>">
+							<div class="bullet-container">
 								<figure style="background-image:url(<?php echo $bg; ?>)"></figure>
-								<img src="<?php echo $icon; ?>" alt="icon">
-							</a>
+								<img src="<?php echo $icon; ?>" alt="icon" class="icon">	
+								<div class="bullet-info">
+									<h2 class="bullet-title"><?php echo $title; ?></h2>
+									<p class="copy"><?php echo $copy; ?></p>
+								</div>
+							</div>
 						</li>
 				
 					<?php endwhile; ?>
@@ -42,7 +48,7 @@
 		<?php get_template_part('templates/section', 'bullet-items') ?>
 
 		<section class="locations-preview">
-			<figure class="bg" style="background-image:url(/wp-content/uploads/2017/03/map.jpg)"></figure>
+			<figure class="bg" style="background-image:url(/wp-content/uploads/2017/05/dwntn-chandler.jpg)"></figure>
 			<?php $loop = new WP_Query( array( 'post_type' => 'location', 'posts_per_page' => -1) ); ?>
 			<div class="content-container">
 				<div class="inner">
@@ -63,5 +69,6 @@
 				</div>
 			</div>
 		</section>
+		<a href="/locations" class="sticky-button">Join The Collective</a>
 	</section>
 <?php endwhile; ?>

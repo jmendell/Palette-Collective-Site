@@ -42,5 +42,6 @@
 				<?php endif; ?>
 			</div>
 		</section>
+		<a href="/locations" class="sticky-button">Join The Collective</a>
 	</section>
 <?php endwhile; ?>

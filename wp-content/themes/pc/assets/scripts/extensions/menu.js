@@ -31,6 +31,11 @@
 					$('.escape').click(function(){
 						_Close();
 					});
+					$(document).keyup(function(e) {
+						if (e.keyCode === 27){
+							_Close();
+						}
+					});
 				},
 
 				init = (function() {

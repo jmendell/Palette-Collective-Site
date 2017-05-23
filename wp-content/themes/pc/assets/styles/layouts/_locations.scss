@@ -1,6 +1,9 @@
 .location-feed{
 	display:flex;
 	height:1000px;
+	@include media($tablet){
+		flex-direction:column;
+	}
 	.location-list{
 		display:flex;
 		flex-direction:column;
@@ -48,13 +51,14 @@
 			padding:10px 0;
 			display:inline-block;
 			border-bottom:5px solid $color-gray-med;
+			text-transform: capitalize;
 		}
 		p{
 			color:$color-gray-dark;
 		}
 		.cta-button{
 			font-size:1em;
-			padding:1em 5em;
+			padding:.8em 2em;
 		}
 	}
 	.map{
@@ -67,15 +71,25 @@
 	padding-bottom:25px;
 	.content-container{
 		display:flex;
+		@include media($tablet){
+			flex-direction:column;
+		}
 	}
 	.col{
 		flex:1;
 		&:first-child{
 			padding-right:25px;
+			@include media($tablet){
+				padding:0;
+				height:550P_bulpx;
+			}
 		}
 		&:last-child{
 			padding-top:50px;
 			padding-left:25px;
+			@include media($mobile){
+				padding:0;
+			}
 		}
 	}
 	.sticky-cta{

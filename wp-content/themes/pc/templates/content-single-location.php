@@ -21,7 +21,6 @@
 				</div>
 				<p class="map-title">Directions:</p>
 				<div class="single-map" id="single-map" data-lat="<?php echo get_field('coordinates')['lat']; ?>" data-long="<?php echo get_field('coordinates')['lng']; ?>"></div>
-				<a href="#" class="full-width-cta">Find a beauty professional</a>
 			</div>
 		</div>
 	</section>

@@ -38,9 +38,10 @@ select{
 	width:100%;
 	font-size:0.9em;
 	border:0;
-	font-size:0.95em;
 	text-transform:uppercase;
 	border:none;
+	font-family:$primary;
+	letter-spacing:1px;
 }
 
 textarea{
@@ -53,13 +54,18 @@ input[type="submit"]{
 	padding:1em 6em;
 	border:none;
 	border-radius:none;
-	background:$color-blue;
+	background:$color-black;
 	color:$color-white;
 	font-size:0.9em;
 	text-align:left;
 	text-transform:uppercase;
 	letter-spacing:3px;
 	font-weight:100;
+	transition:.3s;
+	&:hover{
+		transform:translateX(-5px) translateY(-5px);
+		box-shadow: 5px 5px 0px $color-blue;
+	}
 }
 
 .ginput_container_select{
@@ -77,4 +83,8 @@ input[type="submit"]{
 
 .gfield_required, .charleft{
 	display:none;
+}
+
+.gfield_description, .validation_error{
+	color:#E72D27 !important;
 }

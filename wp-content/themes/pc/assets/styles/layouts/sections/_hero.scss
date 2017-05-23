@@ -35,18 +35,30 @@ $hero-min-height:700px;
 		}
 		.pinned-bottom{
 			bottom:50px;
+			@include media($tablet){
+				width: 100%;
+			}
+			@include media($mobile){
+				bottom:100px;
+			}
 		}
 		.content-container{
 			text-align:left;
 			@include position(absolute, 45% null null 50%);
 			@include transform(translateY(-50%) translateX(-50%));
+			@include media($mobile){
+				text-align:center;
+				top:40%;
+			}
 		}
 		.content-inner{
 			max-width:450px;
 			color:$color-white;
-
 			h1{
 				margin-bottom:10px;
+				@include media($tablet){
+					font-size:3em;
+				}
 			}
 			p{
 				margin-bottom:25px;

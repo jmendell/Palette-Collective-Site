@@ -9,11 +9,29 @@
 	@include media($desktop-large){
 		width:$desktop-large-inner;
 	}
+	@include media($mobile){
+		flex-wrap:wrap;
+	}
 	li{
 		position:relative;
+		height: 100%;
+		transition: .3s;
+		@include media($desktop){
+			&:hover{
+				transform:translateX(-10px) translateY(-10px);
+				box-shadow: 8px 8px 0px $color-blue;
+				z-index: 2;
+			}
+		}
+		@include media($mobile){
+			flex-basis:50%;
+		}
 	}
 	a{
 		display:block;
+	}
+	img{
+		display: block;
 	}
 	h3{
 		letter-spacing:1px;
@@ -27,6 +45,12 @@
 }
 
 .bullet-images{
+	@include media($desktop){
+		display:block;
+	}
+	@include media($tablet){
+		display:none;
+	}
 	ul{
 		display:flex;
 		flex-wrap: wrap;
@@ -39,17 +63,46 @@
 		position:relative;
 		height:250px;
 		&:hover{
-			img{
+			.bullet-info{
 				opacity:1;
+				transform:translateY(-10px);
 			}
 		}
 	}
-	a{
+	.bullet-container{
+		position:relative;
 		display:flex;
 		justify-content:center;
 		align-items:center;
 		z-index:3;
+		padding:25px;
 		@include size(100%);
+		.icon{
+			transition: .5s;
+			opacity:1;
+			filter:invert(100%);
+			@include position(absolute, 50% null null 50%);
+			@include transform(translateY(-50%) translateX(-50%));
+		}
+		&:hover{
+			.icon{
+				transition: .5s;
+				opacity:0;
+			}
+		}
+		.bullet-info{
+			text-align: center;
+			opacity:0;
+			transition: .5s;
+			color:$color-white;
+			.bullet-title{
+				margin:10px 0;
+				font-size:2em;
+				text-transform:uppercase;
+				letter-spacing:2px;
+				font-weight: 100;
+			}
+		}
 	}
 	figure{
 		margin:0;
@@ -57,25 +110,29 @@
 		@include position(absolute, 50% null null 50%);
 		@include transform(translateY(-50%) translateX(-50%));
 	}
-	img{
-		transition:.3s;
-		opacity:0;
-		filter:invert(100%);
-	}
 }
 
 .bullet-items{
 	padding:75px 0;
+	background-color:#f5f5f5;
+	@include media($desktop){
+		display:none;
+	}
+	@include media($tablet){
+		display:block;
+	}
 	ul{
 		display:flex;
-		flex-wrap: wrap;
+		display: -webkit-flex;
+		flex-direction: column;
 		list-style:none;
 		padding:0;
 		margin:0;
+		@include clearfix;
 	}
 	li{
 		display:flex;
-		flex:1 0 50%;
+		display: -webkit-flex;
 		margin:25px 0;
 		.bullet-image{
 			flex:1;
@@ -93,6 +150,9 @@
 		}
 		p{
 			line-height:1.6em;
+		}
+		.bullet-image{
+			margin-right:10px;
 		}
 	}
 }

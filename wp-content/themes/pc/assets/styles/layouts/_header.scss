@@ -2,6 +2,7 @@ header{
 	width:100%;
 	padding:25px;
 	z-index:5;
+	background: linear-gradient(#111111, rgba(0,0,0,0));
 	@include position(absolute, 0 null null 0);
 	.container{
 		display:flex;
@@ -10,6 +11,9 @@ header{
 	.brand{
 		display:block;
 		width:225px;
+		@include media($mobile){
+			width:150px;
+		}
 	}
 	.nav-options{
 		display:flex;
@@ -65,20 +69,142 @@ header{
 	@include position(fixed, 50% null null 50%);
 	@include transform(translateY(-50%) translateX(-50%));
 	nav{
-		@include position(absolute, 50% null null 50%);
-		@include transform(translateY(-50%) translateX(-50%));
+		padding:100px 0 75px 0;
+		display: flex;
+		justify-content: center;
+		width: 90vw;
+		margin:0 auto;
+		@include media($tablet){
+			padding:75px 0 50px 0;
+		}
+		@include media($mobile-landscape){
+			padding:75px 0 25px 0;
+		}
+		@include media($mobile){
+			padding:50px 0 50px 0;
+		}
+		.menu-menu-container{
+			width: 100%;
+		}
 		ul{
+			height: 100%;
 			padding:0;
 			margin:0;
 			list-style:none;
-			text-align:center;
+			display: flex;
+			flex-wrap:wrap;
+			justify-content: space-between;
+			@include media($tablet){
+				flex-direction:column;
+				align-items:center;
+			}
+			@include media($mobile-landscape){
+				flex-direction: row;
+			}
+			@include media($mobile){
+				flex-direction:row;
+				flex-wrap:wrap;
+			}
 			li{
-				margin-bottom:15px;
+				position:relative;
+				margin-bottom: 5px;
+				height: 200px;
+				width: 250px;
+				background-color:$color-gray;
+				flex-basis:33%;
+				transition: .3s;
+				@include media($desktop){
+					&:hover{
+						transform:translateX(-10px) translateY(-10px);
+						box-shadow: 8px 8px 0px $color-blue;
+					}
+				}
+				@include media($tablet){
+					flex-basis:0;
+					height: 150px;
+					width: 200px;
+					text-align: center;
+				}
+				@include media($mobile-landscape){
+					flex:1;
+					margin:0 5px;
+				}
+				@include media($mobile){
+					flex-basis:0;
+					height: 75px;
+					width: 150px;
+					align-items:center;
+					flex-basis: 47%;
+    				margin: 5px 5px;
+				}
 			}
 			a{
+				display: flex;
+				align-items: flex-end;
+    			padding: 0 0 25px 25px;
+				height:100%;
 				text-decoration:none;
 				color:$color-black-soft;
-				font-size:2em;
+				font-size:2.2em;
+				text-transform: uppercase;
+				@include media($tablet){
+					padding:0;
+					align-items:center;
+					justify-content: center;
+				}
+				@include media($mobile){
+					font-size:1.7em;
+				}
+			}
+		}
+	}
+	.menu-info{
+		.content-container{
+			display: flex;
+			align-items:center;
+			@include media($tablet){
+				flex-direction:column;
+				align-items:center;
+			}
+			@include media($mobile-landscape){
+				flex-direction:row;
+			}
+			@include media($mobile){
+				flex-direction:column;
+			}
+			.connect{
+				flex:2;
+				display: flex;
+				align-items:center;
+				justify-content: center;
+				font-size:1.4em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color:$color-black-soft;
+				padding:35px 0;
+				@include media($tablet){
+					flex-direction:column;
+					padding:25px 0;
+				}
+				.email{
+					@include media($mobile){
+						padding-bottom:5px;
+					}
+				}
+				a{
+					color:$color-black-soft;
+					cursor: pointer;
+					transition: .3s;
+					&:hover{
+						color:$color-blue;
+					}
+				}
+				.dash{
+					padding: 0 10px;
+					@include media($mobile){
+						display:none;
+					}
+				}
 			}
 		}
 	}

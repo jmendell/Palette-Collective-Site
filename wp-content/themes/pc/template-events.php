@@ -66,7 +66,7 @@
 					<div class="form-track">
 						<div class="form-wrap sticky-calc-cta" data-trigger=".trigger" data-duration="1050">
 							<div class="content-header">
-								<h3>Host and Event</h3>
+								<h3>Host an Event</h3>
 								<p>Palette is best experienced in person.</p>
 								<p>Fill out your information to schedule a visit.</p>
 							</div>
@@ -77,5 +77,6 @@
 				</div>
 			</div>
 		</section>
+		<a href="/locations" class="sticky-button">Join The Collective</a>
 	</section>
 <?php endwhile; ?>

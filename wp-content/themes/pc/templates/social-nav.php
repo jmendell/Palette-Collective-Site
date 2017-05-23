@@ -10,7 +10,7 @@
 			?>
 
 			<li>
-				<a href="<?php echo $link; ?>">
+				<a href="<?php echo $link; ?>" target="_BLANK">
 					<?php get_template_part('templates/svg/' . $social); ?>
 				</a>            
 			</li>

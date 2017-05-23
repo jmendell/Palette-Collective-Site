@@ -25,7 +25,7 @@
 									<p><?php echo get_field('coordinates')['address']; ?></p>
 								</div>
 							</div>
-							<a href="<?php the_permalink(); ?>" class="cta-button">Welcome</a>
+							<a href="<?php the_permalink(); ?>" class="cta-button">Choose This Location</a>
 						</div>
 					</div>
 				<?php endwhile; 
@@ -35,5 +35,6 @@
 			</div>
 			<div class="map" id="map"></div>
 		</section>
+		<a href="/locations" class="sticky-button">Join The Collective</a>
 	</section>
 <?php endwhile; ?>
