@@ -3,6 +3,7 @@
 	height:1000px;
 	@include media($tablet){
 		flex-direction:column;
+		height: 100%;
 	}
 	.location-list{
 		display:flex;
@@ -11,19 +12,21 @@
 		padding:25px;
 		margin:0;
 		list-style:none;
-		overflow-y:scroll;
-		&::-webkit-scrollbar
-		{
-			width: 8px;
-			height: 8px;
-		}
-		&::-webkit-scrollbar-track
-		{
-			background:$color-black-soft;
-		}
-		&::-webkit-scrollbar-thumb
-		{
-			background:$color-yellow;
+		@include media($desktop){
+			overflow-y:scroll;
+			&::-webkit-scrollbar
+			{
+				width: 8px;
+				height: 8px;
+			}
+			&::-webkit-scrollbar-track
+			{
+				background:$color-black-soft;
+			}
+			&::-webkit-scrollbar-thumb
+			{
+				background:$color-yellow;
+			}
 		}
 	}
 	.location-item{
@@ -63,8 +66,12 @@
 	}
 	.map{
 		flex:1;
+		@include media($mobile){
+			display:none;
+		}
 	}
 }
+
 
 
 .location-content{
@@ -75,20 +82,39 @@
 			flex-direction:column;
 		}
 	}
-	.col{
-		flex:1;
-		&:first-child{
-			padding-right:25px;
-			@include media($tablet){
-				padding:0;
-				height:550P_bulpx;
+	.single-location-form{
+		@include media($desktop){
+			display:none;
+		}
+		@include media($tablet){
+			position:relative;
+			height: 250px;
+			.form{
+				@include position(absolute, 10% null null 50%);
+				@include transform(translateY(-50%) translateX(-50%));
+				background-color: $color-gray-lite;
+				padding:25px;
+				width: 80vw;
 			}
 		}
+	}
+	.desktop-form{
+		@include media($tablet){
+			display:none;
+		}
+	}
+	.col{
+		flex:1;
 		&:last-child{
-			padding-top:50px;
-			padding-left:25px;
+			padding-top:100px;
+			@include media($desktop){
+				padding-left:25px;
+			}
+			@include media($tablet){
+				padding-top:25px;
+			}
 			@include media($mobile){
-				padding:0;
+				padding-top:75px;
 			}
 		}
 	}

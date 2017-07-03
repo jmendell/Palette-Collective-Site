@@ -44,9 +44,25 @@
 				</ul>
 			</section>
 		<?php endif; ?>
-
-		<?php get_template_part('templates/section', 'bullet-items') ?>
-
+		<section class="additional-content">
+				<?php if( have_rows('additional_content')): ?>
+				<div class="content-container">
+					<?php while( have_rows('additional_content') ): the_row(); 
+				
+						$title = get_sub_field('title');
+						$copy = get_sub_field('copy');
+				
+						?>
+				
+						<div class="content">
+							<h3 class="content-title"><?php echo $title; ?></h3>
+							<p class="content-copy"><?php echo $copy; ?></p>
+						</div>
+				
+					<?php endwhile; ?>
+				</div>
+				<?php endif; ?>
+		</section>
 		<section class="locations-preview">
 			<figure class="bg" style="background-image:url(/wp-content/uploads/2017/05/dwntn-chandler.jpg)"></figure>
 			<?php $loop = new WP_Query( array( 'post_type' => 'location', 'posts_per_page' => -1) ); ?>
@@ -69,6 +85,7 @@
 				</div>
 			</div>
 		</section>
-		<a href="/locations" class="sticky-button">Join The Collective</a>
+		<?php get_template_part('templates/section', 'sticky-footer') ?>
+		<?php get_template_part('templates/section', 'form-modal') ?>
 	</section>
 <?php endwhile; ?>

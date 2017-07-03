@@ -9,6 +9,7 @@
 		padding:100px 0;
 		@include media($tablet){
 			text-align:center;
+			padding:50px 0;
 		}
 		.content{
 			max-width:60%;
@@ -18,6 +19,28 @@
 		}
 		h3{
 			margin-bottom:25px;
+		}
+	}
+	.additional-content{
+		padding:100px 0;
+		@include media($tablet){
+			padding:50px 0;
+		}
+		.content-container{
+			display: flex;
+			@include media($tablet){
+				flex-direction: column;
+			}
+		}
+		.content{
+			flex:1;
+			padding:0 20px;
+			@include media($tablet){
+				margin:25px 0;
+			}
+			.content-title{
+				margin-bottom:10px;
+			}
 		}
 	}
 	.locations-preview{

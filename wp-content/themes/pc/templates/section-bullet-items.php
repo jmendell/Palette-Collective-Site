@@ -5,6 +5,7 @@
 			<ul>
 			<?php while( have_rows('bullet_items') ): the_row(); 
 
+				$bg = get_sub_field('background');
 				$image = get_sub_field('image');
 				$title = get_sub_field('title');
 				$copy = get_sub_field('copy');

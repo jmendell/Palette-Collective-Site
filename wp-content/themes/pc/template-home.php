@@ -20,7 +20,7 @@
 					<p class="font-primary">[ Photo Credit: <span id="credit"><?php echo get_field('hero_slider')[0]['image_credit']; ?></span> ]</p>
 				</div>
 				<?php if( have_rows('bullet_navigation')): ?>
-					<ul class="bullet-nav">
+					<ul class="bullet-nav desktop">
 					<?php while( have_rows('bullet_navigation') ): the_row(); 
 				
 						//declare variables
@@ -42,6 +42,7 @@
 				<?php endif; ?>
 			</div>
 		</section>
-		<a href="/locations" class="sticky-button">Join The Collective</a>
+		<?php get_template_part('templates/section', 'sticky-footer') ?>
+		<?php get_template_part('templates/section', 'form-modal') ?>
 	</section>
 <?php endwhile; ?>

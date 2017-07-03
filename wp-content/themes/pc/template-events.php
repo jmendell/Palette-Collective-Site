@@ -35,6 +35,12 @@
 								$location = get_field('location');
 								$location_address = get_field('coordinates', $location);
 								$content = get_the_content();
+								$ctaCopy = get_field('cta_website_button_copy');
+								$ctaLink = get_field('cta_website_link');
+								$ctaPhoneCopy = get_field('cta_phone_button_copy');
+								$ctaPhone = get_field('cta_phone_number');
+								$ctaEmailCopy = get_field('cta_email_button_copy');
+								$ctaEmail = get_field('cta_email_adress');
 							?>
 							<li>
 								<div class="col">
@@ -52,6 +58,19 @@
 									<?php if ($content): ?>
 										<div class="content">
 											<?php echo $content; ?>
+										</div>
+									<?php endif ?>
+									<?php if ($ctaLink || $ctaPhone || $ctaEmail): ?>
+										<div class="contact-cta">
+											<?php if ($ctaLink): ?>
+													<a href="<?php echo $ctaLink; ?>" target="_BLANK" class="cta-button event-site"><?php echo $ctaCopy; ?></a>
+											<?php endif ?>
+											<?php if ($ctaPhone): ?>
+												<a href="tel:<?php echo preg_replace('/[^\p{L}\p{N}\s]/u', '', $ctaPhone); ?>" class="cta-button event-phone"><?php echo $ctaPhoneCopy; ?></a>
+											<?php endif ?>
+											<?php if ($ctaEmail): ?>
+												<a href="mailto:<?php echo $ctaEmail; ?>" class="cta-button event-email"><?php echo $ctaEmailCopy; ?></a>
+											<?php endif ?>
 										</div>
 									<?php endif ?>
 								</div>
@@ -77,6 +96,7 @@
 				</div>
 			</div>
 		</section>
-		<a href="/locations" class="sticky-button">Join The Collective</a>
+		<?php get_template_part('templates/section', 'sticky-footer') ?>
+		<?php get_template_part('templates/section', 'form-modal') ?>
 	</section>
 <?php endwhile; ?>

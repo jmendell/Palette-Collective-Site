@@ -16,6 +16,9 @@
 </div>
 <div class="full-width-menu open">
 	<div class="escape"></div>
+	<a class="menu-brand" href="<?= esc_url(home_url('/')); ?>">
+		<img src="<?php the_field('site_logo_dark', 'OPTIONS'); ?>" class="menu-logo" alt="">
+	</a>
 	<nav role="navigation">
 		<?php
 		if (has_nav_menu('primary_navigation')) :
@@ -25,13 +28,10 @@
 	</nav>
 	<div class="menu-info">
 		<div class="content-container">
-			<a class="menu-brand" href="<?= esc_url(home_url('/')); ?>">
-				<img src="<?php the_field('site_logo_dark', 'OPTIONS'); ?>" alt="">
-			</a>
 			<div class="connect">
 				<a href="mailto:info@mypalettecollective.com" class="email">info@mypalettecollective.com</a>
 				<p class="dash">-</p>
-				<span class="tel">(480) 123-4567</span>
+				<a href="tel:4801234567" class="phone">(480) 123-4567</a>
 			</div>
 			<div class="social">
 				<?php get_template_part('templates/social', 'nav'); ?>

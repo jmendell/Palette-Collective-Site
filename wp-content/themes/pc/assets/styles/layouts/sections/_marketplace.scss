@@ -1,10 +1,35 @@
-.marketplace-section{
-	background-color:$color-gray-lite;
-	.tagline{
-		font-size:3em;
-		text-align: center;
-		padding:100px 0;
-		text-transform: uppercase;
-		letter-spacing: 1px;
+.marketplace{
+	.title{
+		@include media($mobile){
+			font-size:4em;
+		}
+	}
+	.pinned-bottom{
+		top:225px;
+	}
+	.marketplace-container{
+		height: 200px;
+	}
+	.marketplace-form-container{
+		@include position(absolute, 45% null null 50%);
+		@include transform(translateY(-50%) translateX(-50%));
+		width: 60vw;
+		padding:25px;
+		background-color: $color-gray-lite;
+		@include media($mobile){
+			width:90vw;
+		}
+		.subtext{
+			margin:15px 0;
+		}
+	}
+	.marketplace-section{
+		.tagline{
+			font-size:3em;
+			text-align: center;
+			padding:100px 0;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
 	}
 }

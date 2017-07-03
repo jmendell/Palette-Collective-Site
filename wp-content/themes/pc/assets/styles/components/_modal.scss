@@ -1,0 +1,57 @@
+.form-modal{
+	display:none;
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:10;
+	.modal-overlay{
+		position:fixed;
+		height:100%;
+		width:100%;
+		background:$color-gray-lite;
+		top:0;
+	}
+	.modal-inner{
+		position:fixed;
+		top:50%;
+		left:50%;
+		transform:translateX(-50%) translateY(-50%);
+		width: 80vw;
+		.form-modal-title{
+			font-size:3em;
+			text-align: center;
+		}
+		.subtext{
+			text-align: center;
+			margin-bottom: 25px;
+			font-size:.8em;
+		}
+		.escape{
+			position:absolute;
+			right:-50px;
+			top:-50px;
+			cursor:pointer;
+			@include size(35px);
+			@include media($mobile){
+				right:-30px;
+				top:-30px;
+			}
+			&:before, &:after{
+				content:'';
+				display:block;
+				position:absolute;
+				background:$color-white;
+				height:5px;
+				width:100%;
+				top:50%;
+				transform:translateY(-50%);
+			}
+			&:before{
+				transform:rotate(45deg);
+			}
+			&:after{
+				transform:rotate(-45deg);
+			}
+		}
+	}
+}

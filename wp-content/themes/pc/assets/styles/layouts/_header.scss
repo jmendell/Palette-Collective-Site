@@ -68,6 +68,12 @@ header{
 	@include size(100%);
 	@include position(fixed, 50% null null 50%);
 	@include transform(translateY(-50%) translateX(-50%));
+	@include media($mobile-landscape){
+		overflow:scroll;
+	}
+	.menu-logo{
+		margin:25px 0 0 25px;
+	}
 	nav{
 		padding:100px 0 75px 0;
 		display: flex;
@@ -75,13 +81,14 @@ header{
 		width: 90vw;
 		margin:0 auto;
 		@include media($tablet){
-			padding:75px 0 50px 0;
-		}
-		@include media($mobile-landscape){
 			padding:75px 0 25px 0;
 		}
+		@include media($mobile-landscape){
+			padding:25px 0 25px 0;
+		}
 		@include media($mobile){
-			padding:50px 0 50px 0;
+			padding:35px 0 0 0;
+			width: 80vw;
 		}
 		.menu-menu-container{
 			width: 100%;
@@ -95,19 +102,21 @@ header{
 			flex-wrap:wrap;
 			justify-content: space-between;
 			@include media($tablet){
-				flex-direction:column;
 				align-items:center;
+				flex-direction:column;
+				flex-wrap:nowrap;
 			}
 			@include media($mobile-landscape){
-				flex-direction: row;
+				flex-wrap:wrap;
+				flex-direction:row;
 			}
 			@include media($mobile){
-				flex-direction:row;
-				flex-wrap:wrap;
+				flex-direction:column;
+				flex-wrap:nowrap;
 			}
 			li{
 				position:relative;
-				margin-bottom: 5px;
+				margin: 5px 0;
 				height: 200px;
 				width: 250px;
 				background-color:$color-gray;
@@ -120,23 +129,13 @@ header{
 					}
 				}
 				@include media($tablet){
-					flex-basis:0;
-					height: 150px;
-					width: 200px;
+					height: 100px;
+					width: 100%;
 					text-align: center;
 				}
-				@include media($mobile-landscape){
-					flex:1;
-					margin:0 5px;
-				}
 				@include media($mobile){
-					flex-basis:0;
-					height: 75px;
-					width: 150px;
-					align-items:center;
-					flex-basis: 47%;
-    				margin: 5px 5px;
-				}
+					height: 50px;	
+				}			
 			}
 			a{
 				display: flex;
@@ -159,6 +158,9 @@ header{
 		}
 	}
 	.menu-info{
+		@include media($mobile){
+			padding-bottom:25px;
+		}
 		.content-container{
 			display: flex;
 			align-items:center;
@@ -176,18 +178,23 @@ header{
 				flex:2;
 				display: flex;
 				align-items:center;
-				justify-content: center;
 				font-size:1.4em;
 				text-transform: uppercase;
 				letter-spacing: 1px;
 				color:$color-black-soft;
 				padding:35px 0;
 				@include media($tablet){
-					flex-direction:column;
 					padding:25px 0;
+					flex-direction: column;
+				}
+				@include media($mobile-landscape){
+					align-items:flex-start;
+				}
+				@include media($mobile){
+					align-items:center;
 				}
 				.email{
-					@include media($mobile){
+					@include media($mobile-landscape){
 						padding-bottom:5px;
 					}
 				}
@@ -201,9 +208,12 @@ header{
 				}
 				.dash{
 					padding: 0 10px;
-					@include media($mobile){
+					@include media($mobile-landscape){
 						display:none;
 					}
+				}
+				.phone{
+					text-decoration: none;
 				}
 			}
 		}

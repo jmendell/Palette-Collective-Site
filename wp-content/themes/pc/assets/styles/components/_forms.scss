@@ -18,6 +18,7 @@ form{
 	font-size:0.9em;
 	padding:1em;
 	border:none;
+	border-radius:0;
 	font-family:$primary;
 	@include placeholder{
 		color:$color-white;
@@ -62,9 +63,14 @@ input[type="submit"]{
 	letter-spacing:3px;
 	font-weight:100;
 	transition:.3s;
+	border-radius:0;
 	&:hover{
 		transform:translateX(-5px) translateY(-5px);
 		box-shadow: 5px 5px 0px $color-blue;
+	}
+	@include media($mobile){
+		width: 100%;
+		text-align: center;
 	}
 }
 
@@ -76,7 +82,7 @@ input[type="submit"]{
 		border-left:2px solid $color-white;
 		border-bottom:2px solid $color-white;
 		@include size(15px);
-		@include position(absolute, 50% 25px null null);
+		@include position(absolute, 40% 25px null null);
 		@include transform(translateY(-50%) rotate(-45deg));
 	}
 }

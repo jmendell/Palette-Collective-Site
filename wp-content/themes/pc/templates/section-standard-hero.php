@@ -9,7 +9,7 @@
 			<?php if (!empty($credit)): ?>
 				<p class="credit">[ Photo Credit: <?php echo $credit; ?> ]</p>
 			<?php endif ?>
-			<h1 class="title"><?php the_title(); ?></h1>
+			<h1 class="title title-mobile"><?php the_title(); ?></h1>
 		<?php else: ?>
 			<h1 class="title"><?php echo $title; ?></h1>
 		<?php endif ?>

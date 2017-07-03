@@ -9,6 +9,8 @@
 		</div>
 	</div>
 	<div class="footer-bot">
-		<p>Palette Collective Salon Suites - 2100 S Gilbert Rd #22 Chandler, Arizona 85226</p>
+		<div class="content-container">
+			<p>Palette Collective Salon Suites - 2100 S Gilbert Rd #22 Chandler, Arizona 85226</p>
+		</div>
 	</div>
 </footer>

@@ -89,4 +89,16 @@
 		font-family:$secondary;
 		color:$color-gray-dark;
 	}
+	.contact-cta{
+		margin-top: 10px;
+		display: flex;
+		@include media($mobile){
+			flex-direction:column;
+			text-align: center;
+		}
+		a{
+			margin:5px 5px;
+			padding:1em 1em;
+		}
+	}
 }

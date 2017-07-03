@@ -4,8 +4,8 @@
 	</section>
 	<section class="location-content">
 		<div class="content-container">
-			<div class="col">
-				<div class="sticky-cta" data-trigger=".location-content" data-duration="200">
+			<div class="col desktop-form">
+				<div class="sticky-cta" data-trigger=".location-content" data-duration="300">
 					<div class="info">
 						<?php the_title('<h3>', '</h3>'); ?>
 						<p class="address"><?php echo get_field('coordinates')['address']; ?></p>
@@ -15,7 +15,17 @@
 	') ?>
 				</div>
 			</div>
-			<div class="col">
+			<div class="single-location-form">
+				<div class="col form">
+						<div class="info">
+							<?php the_title('<h3>', '</h3>'); ?>
+							<p class="address"><?php echo get_field('coordinates')['address']; ?></p>
+							<p class="cta-text">Palette is best experienced in person. Fill out your information to schedule a visit.</p>
+						</div>
+						<?php echo do_shortcode('[gravityform id=2 title=false description=false ajax=true tabindex=49]') ?>
+				</div>
+			</div>
+			<div class="col single-location-content">
 				<div class="content">
 					<?php the_content(); ?>
 				</div>

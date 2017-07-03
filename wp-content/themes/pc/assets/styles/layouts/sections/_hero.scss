@@ -48,7 +48,6 @@ $hero-min-height:700px;
 			@include transform(translateY(-50%) translateX(-50%));
 			@include media($mobile){
 				text-align:center;
-				top:40%;
 			}
 		}
 		.content-inner{

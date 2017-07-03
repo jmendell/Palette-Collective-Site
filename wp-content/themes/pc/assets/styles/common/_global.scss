@@ -1,6 +1,7 @@
 html{
 	padding:0;
 	margin:0;
+	display:block;
 	@include media($mobile){
 		height:auto
 	}
