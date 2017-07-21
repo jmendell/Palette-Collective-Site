@@ -8,12 +8,12 @@
 		top:225px;
 	}
 	.marketplace-container{
-		height: 200px;
+		height: 300px;
 	}
 	.marketplace-form-container{
 		@include position(absolute, 45% null null 50%);
 		@include transform(translateY(-50%) translateX(-50%));
-		width: 60vw;
+		width: 50vw;
 		padding:25px;
 		background-color: $color-gray-lite;
 		@include media($mobile){

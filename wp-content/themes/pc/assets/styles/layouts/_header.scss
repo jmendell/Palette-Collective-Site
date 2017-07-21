@@ -120,12 +120,20 @@ header{
 				height: 200px;
 				width: 250px;
 				background-color:$color-gray;
+				display: flex;
+				align-items:flex-end;
 				flex-basis:33%;
 				transition: .3s;
 				@include media($desktop){
 					&:hover{
 						transform:translateX(-10px) translateY(-10px);
 						box-shadow: 8px 8px 0px $color-blue;
+						a{
+							transform: translateY(-25px);
+							span{							
+								opacity:1;
+							}
+						}
 					}
 				}
 				@include media($tablet){
@@ -138,14 +146,13 @@ header{
 				}			
 			}
 			a{
-				display: flex;
-				align-items: flex-end;
     			padding: 0 0 25px 25px;
-				height:100%;
 				text-decoration:none;
 				color:$color-black-soft;
 				font-size:2.2em;
 				text-transform: uppercase;
+				width:100%;
+				transition: .3s;
 				@include media($tablet){
 					padding:0;
 					align-items:center;
@@ -153,6 +160,14 @@ header{
 				}
 				@include media($mobile){
 					font-size:1.7em;
+				}
+				span{
+					@include media($desktop){
+						position:absolute;
+						opacity:0;
+						transition: .8s;
+						font-size:1.3rem;
+					}
 				}
 			}
 		}

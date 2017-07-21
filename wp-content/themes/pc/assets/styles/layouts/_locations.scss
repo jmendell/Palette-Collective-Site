@@ -97,6 +97,9 @@
 				width: 80vw;
 			}
 		}
+		@include media($mobile){
+			display:none;
+		}
 	}
 	.desktop-form{
 		@include media($tablet){
@@ -115,6 +118,11 @@
 			}
 			@include media($mobile){
 				padding-top:75px;
+			}
+		}
+		&.form{
+			@include media($mobile){
+				display:none;
 			}
 		}
 	}
@@ -144,5 +152,19 @@
 	.single-map{
 		height:300px;
 		width:100%;
+	}
+	#join-sticky-footer{
+		display: none;
+	}
+	#tour-sticky-footer{
+		@include media($desktop){
+			display:none;
+		}
+		@include media($tablet){
+			display:none;
+		}
+		@include media($mobile){
+			display: block;
+		}
 	}
 }

@@ -8,6 +8,24 @@
 	}
 }
 
+.events-hero{
+	position:relative;
+	height:600px;
+	color:$color-white;
+	text-align:center;	
+	.credit{
+		font-size:.8em;
+	}
+	.event-button{
+		background-color: $color-white;
+		color:$color-black;
+		margin-top: 25px;
+		@include media($desktop){
+			display:none;
+		}
+	}
+}
+
 $hero-min-height:700px;
 .home{
 	.hero{

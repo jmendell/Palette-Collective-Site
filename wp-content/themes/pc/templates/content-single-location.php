@@ -3,6 +3,8 @@
 		<figure style="background-image:url(<?php echo get_the_post_thumbnail_url(null, 'full'); ?>);" class="background"></figure>
 	</section>
 	<section class="location-content">
+	<?php get_template_part('templates/section', 'sticky-footer') ?>
+	<?php get_template_part('templates/section', 'form-modal') ?>
 		<div class="content-container">
 			<div class="col desktop-form">
 				<div class="sticky-cta" data-trigger=".location-content" data-duration="300">
@@ -27,6 +29,7 @@
 			</div>
 			<div class="col single-location-content">
 				<div class="content">
+					<!-- <h3 class="location-title"><?php the_title(); ?></h3> -->
 					<?php the_content(); ?>
 				</div>
 				<p class="map-title">Directions:</p>

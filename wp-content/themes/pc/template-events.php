@@ -2,6 +2,10 @@
 /**
  * Template Name: Events
  */
+
+$eventArgs = array( 'post_type' => 'event', 'posts_per_page' => -1);
+$eventLoop = new WP_Query( $eventArgs );
+
 ?>
 <!-- Adding the locations to the site object -->
 <?php $loop = new WP_Query( array( 'post_type' => 'location', 'posts_per_page' => -1) ); $i = 0; ?>
@@ -13,20 +17,21 @@
 	];
 </script>
 
+	
 <?php while (have_posts()) : the_post(); ?>
 	<section class="root-container">
-		<?php get_template_part('templates/section', 'standard-hero') ?>
+		<?php get_template_part('templates/section', 'events-hero') ?>
 		<section class="event-content">
 			<div class="content-container">
-				<div class="col-7">
+			<?php
+				if ($eventLoop->have_posts()) :?>
+				<div class="col-7">				
 					<div class="event-list">
 						<ul>
 						<?php
 
-						$args = array( 'post_type' => 'event', 'posts_per_page' => -1);
-						$loop = new WP_Query( $args );
 						
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						while ( $eventLoop->have_posts() ) : $eventLoop->the_post(); ?>
 							<?php
 								$img = get_the_post_thumbnail_url();
 								$title = the_title('', '', false);
@@ -81,22 +86,27 @@
 						</ul>
 					</div>
 				</div>
+				<?php endif ?>
+				<?php if ($eventLoop->have_posts()): ?>
 				<div class="col-5">
 					<div class="form-track">
-						<div class="form-wrap sticky-calc-cta" data-trigger=".trigger" data-duration="1050">
+						<div class="form-wrap sticky-calc-cta" id="event-form-wrap" data-trigger=".trigger" data-duration="1050">
+				<?php else: ?>
+					<div class="col-5-no-post">
+						<div class="form-track">
+							<div class="form-wrap" data-trigger=".trigger" data-duration="1050">
+				<?php endif ?>
 							<div class="content-header">
 								<h3>Host an Event</h3>
 								<p>Palette is best experienced in person.</p>
 								<p>Fill out your information to schedule a visit.</p>
 							</div>
-							<?php echo do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=49]') ?>
+							<?php echo do_shortcode('[gravityform id=4 title=false description=false ajax=true tabindex=49]') ?>
 						</div>
 						<div class="trigger"></div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<?php get_template_part('templates/section', 'sticky-footer') ?>
-		<?php get_template_part('templates/section', 'form-modal') ?>
 	</section>
 <?php endwhile; ?>
