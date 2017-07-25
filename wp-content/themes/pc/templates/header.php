@@ -19,10 +19,19 @@
 	<a class="menu-brand" href="<?= esc_url(home_url('/')); ?>">
 		<img src="<?php the_field('site_logo_dark', 'OPTIONS'); ?>" class="menu-logo" alt="">
 	</a>
-	<nav role="navigation">
+	<nav role="navigation" id="menu-nav">
 		<?php
 		palettePrimary_nav();
 		?>
+		<!-- full li menu item is now clickable -->
+		<script>
+		jQuery(document).ready(function($){
+			$('.palette-nav-item').unbind().click(function(){
+				var test = $(this).find('a').attr('href');
+				window.location.href = test;
+			});
+		})
+		</script>
 	</nav>
 	<div class="menu-info">
 		<div class="content-container">

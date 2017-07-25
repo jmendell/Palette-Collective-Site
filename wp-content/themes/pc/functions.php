@@ -105,7 +105,7 @@ class Microdot_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         // build out custom link
         // add any classes that you want
-        $output .= '<li><a class="nav-link link" href="' . $url . '">' . $item->title . '<br><span class="description">'. $item->description .'</span></a></li>';
+        $output .= '<li class="palette-nav-item"><a class="nav-link link" href="' . $url . '">' . $item->title . '<br><span class="description">'. $item->description .'</span></a></li>';
 
     }
 
