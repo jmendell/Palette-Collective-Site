@@ -4,3 +4,4 @@ jQuery('#map').gMap();
 jQuery('#single-map').singleGMap();
 jQuery('.location-selector').locationSelector();
 jQuery('#join-sticky-footer').formModal();
+jQuery('.palette-nav-item').menuClick();

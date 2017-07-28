@@ -23,15 +23,6 @@
 		<?php
 		palettePrimary_nav();
 		?>
-		<!-- full li menu item is now clickable -->
-		<script>
-		jQuery(document).ready(function($){
-			$('.palette-nav-item').unbind().click(function(){
-				var test = $(this).find('a').attr('href');
-				window.location.href = test;
-			});
-		})
-		</script>
 	</nav>
 	<div class="menu-info">
 		<div class="content-container">
