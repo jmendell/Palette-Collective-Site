@@ -29,7 +29,7 @@
 			</div>
 			<div class="col single-location-content">
 				<div class="content">
-					<!-- <h3 class="location-title"><?php the_title(); ?></h3> -->
+					<h3 class="location-title"><?php the_title(); ?></h3>
 					<?php the_content(); ?>
 				</div>
 				<p class="map-title">Directions:</p>

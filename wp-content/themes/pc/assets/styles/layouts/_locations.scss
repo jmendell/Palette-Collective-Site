@@ -117,7 +117,19 @@
 				padding-top:25px;
 			}
 			@include media($mobile){
-				padding-top:75px;
+				padding-top:25px;
+			}
+			.location-title{
+				margin-bottom: 25px; 
+				@include media($desktop){
+					display:none;
+				}
+				@include media($tablet){
+					display:none;
+				}
+				@include media($mobile){
+					display:block;
+				}
 			}
 		}
 		&.form{
