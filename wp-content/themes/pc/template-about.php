@@ -6,7 +6,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 	<section class="root-section">
-		<?php get_template_part('templates/section', 'standard-hero') ?>
+		<?php get_template_part('templates/section', 'about-hero') ?>
 		<section class="about-palette">
 			<div class="content-container">
 				<h3>About Palette</h3>

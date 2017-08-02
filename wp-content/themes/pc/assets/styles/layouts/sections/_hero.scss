@@ -26,6 +26,28 @@
 	}
 }
 
+.credit-link{
+	color:$color-white;
+	text-decoration:none;
+	transition:.3s;
+	&:hover{
+		color:$color-blue;
+	}
+}
+
+.about-hero{
+	position:relative;
+	height:600px;
+	color:$color-white;
+	text-align:center;
+	.credit-link{
+		width: 100%;
+	}	
+	.credit{
+		font-size:.8em;
+	}
+}	
+
 $hero-min-height:700px;
 .home{
 	.hero{
@@ -89,6 +111,10 @@ $hero-min-height:700px;
 			text-transform:uppercase;
 			font-size:.9em;
 			color:$color-white;
+			transition:.3s;
+			&:hover{
+				color:$color-blue;
+			}
 		}
 	}
 }

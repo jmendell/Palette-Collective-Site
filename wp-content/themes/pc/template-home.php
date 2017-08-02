@@ -17,7 +17,7 @@
 			</div>
 			<div class="pinned-bottom">
 				<div class="credit">
-					<p class="font-primary">[ Photo Credit: <span id="credit"><?php echo get_field('hero_slider')[0]['image_credit']; ?></span> ]</p>
+					<p class="font-primary"><a href="<?php echo get_field('hero_slider')[0]['image_credit_link']; ?>" class="credit credit-link" target="_BLANK">[ Photo Credit: <span id="credit"><?php echo get_field('hero_slider')[0]['image_credit']; ?></span> ]</a></p>
 				</div>
 				<?php if( have_rows('bullet_navigation')): ?>
 					<ul class="bullet-nav desktop">

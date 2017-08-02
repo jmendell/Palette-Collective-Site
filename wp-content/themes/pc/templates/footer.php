@@ -10,7 +10,7 @@
 	</div>
 	<div class="footer-bot">
 		<div class="content-container">
-			<p>Palette Collective Salon Suites - 2100 S Gilbert Rd #22 Chandler, Arizona 85226</p>
+			<p>Palette Collective Salon Suites - 2017 All Rights Reserved</p>
 		</div>
 	</div>
 </footer>

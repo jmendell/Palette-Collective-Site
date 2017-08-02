@@ -106,6 +106,7 @@ header{
 				align-items:center;
 				flex-direction:column;
 				flex-wrap:nowrap;
+				width: 70vw;
 			}
 			@include media($mobile-landscape){
 				flex-wrap:wrap;
