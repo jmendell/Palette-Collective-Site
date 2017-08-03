@@ -180,3 +180,110 @@
 		}
 	}
 }
+
+.marketplace-tenants{
+	.tenant-card-section{
+		display:flex;
+		flex-wrap:wrap;
+		.section-title{
+			margin-bottom:15px;
+		}
+		.marketplace-tenant-card{
+			flex-basis:31%;
+			position:relative;
+			padding:20px;
+			background-color: #efefef;
+			z-index: 3;
+			margin-bottom:15px;
+			.tenant-info{
+				display:flex;
+				flex-direction:column;
+				.name{
+					font-size:1.4em;
+					font-weight:$lite;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+				p, a{
+					margin:5px 0;
+				}
+				.social{
+					display: flex;
+					align-items: center;
+					margin:5px 0;
+					li{
+						width:25px;
+						list-style:none;
+					}
+				}
+			}
+			.suite-num{
+				font-family:$primary;
+				position: absolute;
+			    font-size: 15em;
+			    right: 0;
+			    bottom: -10px;
+			    color: white;
+			    line-height: 200px;
+			    display: flex;
+			    align-items: center;
+			    letter-spacing: 0;
+			    z-index: -1;
+			}
+		}
+	}
+}
+
+.location-tenants{
+	margin-bottom: 25px;
+	.location-tenant-card-section{
+		display:flex;
+		flex-wrap: wrap;
+		.section-title{
+			margin-bottom:15px;
+		}
+		.location-tenant-card{
+			flex-basis:31%;
+			position:relative;
+			padding:20px;
+			background-color: #efefef;
+			z-index: 3;
+			margin-bottom:15px;
+			.tenant-info{
+				display:flex;
+				flex-direction:column;
+				.name{
+					font-size:1.4em;
+					font-weight:$lite;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+				p, a{
+					margin:5px 0;
+				}
+				.social{
+					display: flex;
+					align-items: center;
+					margin:5px 0;
+					li{
+						width:25px;
+						list-style:none;
+					}
+				}
+			}
+			.suite-num{
+				font-family:$primary;
+				position: absolute;
+			    font-size: 15em;
+			    right: 0;
+			    bottom: -10px;
+			    color: white;
+			    line-height: 200px;
+			    display: flex;
+			    align-items: center;
+			    letter-spacing: 0;
+			    z-index: -1;
+			}
+		}
+	}
+}
