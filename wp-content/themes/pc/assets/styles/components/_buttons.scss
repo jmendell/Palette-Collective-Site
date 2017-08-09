@@ -50,7 +50,7 @@
 	text-decoration:none;
 	width:100%;
 	bottom:0;
-	z-index:2;
+	z-index:10;
 	border:1px solid $color-black;
 	text-align:center;
 	@include media($desktop){

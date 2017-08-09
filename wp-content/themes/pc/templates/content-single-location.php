@@ -64,20 +64,43 @@
 			}
 		}
 	?>
+
+	<?php  
+		$marketplace_categories = get_terms( 
+			array(
+		    	'taxonomy' => 'marketplace_categories',
+		    	'hide_empty' => true,
+		    	'orderby' => 'menu_order'
+			)
+		);
+	?>
+
 	<?php if ($loop->have_posts()): ?>
 		<?php if ($location_has_marketplace): ?>
 			<section class="marketplace-tenants">
 				<div class="content-container">
-					<h2 class="section-title">Marketplace</h2>
-					<div class="tenant-card-section">
-						
+					<div class="title-section">
+					<h2 class="dynamic-title">Marketplace</h2>
+					<img src="/wp-content/uploads/2017/08/down-arrow.png" alt="arrow" class="down-arrow">
+				</div>
+				<!-- <ul class="category-select">
+					<li class="mix category" data-filter="all" data-title="Marketplace">All</li>
+					<?php foreach ($marketplace_categories as $category): ?>
+						<li class="mix category" data-filter=".<?php echo $category->slug ?>" data-title="<?php echo $category->name ?>"><?php echo $category->name ?></li>	
+					<?php endforeach ?>
+				</ul> -->
+					<div class="marketplace-card-section">
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<?php if (get_field('marketplace', $post->id)): ?>
+							<?php $termFilter = ''; 
+							$termName = '';
+							?>
+							<?php $terms = get_the_terms($post->ID, 'marketplace_categories');
+							 ?>
+							<?php if (get_field('marketplace', $post->ID)): ?>
 								
 								<?php if( have_rows('tenant_info')): ?>
 									<?php while( have_rows('tenant_info') ): the_row(); 
 								
-										$categories = get_sub_field('tenant_categories');
 										$phone = get_sub_field('phone_number');
 										$email = get_sub_field('email');
 										$website = get_sub_field('website');
@@ -85,82 +108,123 @@
 										$insta = get_sub_field('instagram_link');
 										$twitter = get_sub_field('twitter_link');
 										$linkedin = get_sub_field('linkedin');
+										$linkedin = get_sub_field('linkedin');
 										$suite = get_sub_field('suite_number');
-								
 										?>
-								
-										<div class="marketplace-tenant-card">
-											<div class="tenant-info">
-												
-												<h4 class="name"><?php the_title(); ?></h4>
-												<p class="category"><?php echo $categories; ?></p>
-												<?php if ($phone): ?>
-													<p class="phone"><?php echo $phone; ?></p>
+
+										<?php foreach ($terms as $term) {
+											$termFilter .= $term->slug . ' ';
+										} 
+										$termFilter = rtrim($termFilter, ' ');
+
+										?>
+							
+									<div class="marketplace-tenant-card mix <?php echo $termFilter; ?>">
+										<div class="tenant-info">
+											<h4 class="name"><?php the_title(); ?></h4>
+											<?php if ($terms): ?>
+												<!-- <p class="category">
+													<?php foreach ($terms as $term) {
+														$termName .= $term->name . ', ';
+														} 
+														$termName = rtrim($termName , ', ');
+
+														echo $termName;
+													?>
+												</p> -->
+											<?php endif ?>
+											<?php if ($phone): ?>
+												<a href="<?php echo $phone; ?>"><?php echo $phone; ?></a>
+											<?php endif ?>
+											<?php if ($email): ?>
+												<a href="<?php echo $email ?>"><?php echo $email ?></a>
+											<?php endif ?>
+											<?php if ($website): ?>
+												<a href="<?php echo $website; ?>" target="_BLANK"><?php echo $website; ?></a>
+											<?php endif ?>
+											<div class="social">
+												<?php if ($fb): ?>
+													<li>
+														<a href="<?php echo $fb; ?>" target="_BLANK" class="facebook icon" title="Facebook">
+															<?php get_template_part('templates/svg/' . 'facebook'); ?>
+														</a>
+													</li>
 												<?php endif ?>
-												<?php if ($email): ?>
-													<a href="mailto:<?php $email; ?>"><?php echo $email; ?></a>
+												<?php if ($insta): ?>
+													<li>
+														<a href="<?php echo $insta; ?>" target="_BLANK" class="instagram icon" title="Instagram">
+															<?php get_template_part('templates/svg/' . 'instagram'); ?>
+														</a>
+													</li>
 												<?php endif ?>
-												<?php if ($website): ?>
-													<a href="<?php echo $website; ?>"><?php echo $website; ?></a>
+												<?php if ($twitter): ?>
+													<li>
+														<a href="<?php echo $twitter; ?>" target="_BLANK" class="twitter icon" title="Twitter">
+															<?php get_template_part('templates/svg/' . 'twitter'); ?>
+														</a>
+													</li>
 												<?php endif ?>
-												<div class="social">
-													<?php if ($fb): ?>
-														<li>
-															<a href="<?php echo $fb; ?>" target="_BLANK" class="facebook icon" title="Facebook">
-																<?php get_template_part('templates/svg/' . 'facebook'); ?>
-															</a>
-														</li>
-													<?php endif ?>
-													<?php if ($insta): ?>
-														<li>
-															<a href="<?php echo $insta; ?>" target="_BLANK" class="instagram icon" title="Instagram">
-																<?php get_template_part('templates/svg/' . 'instagram'); ?>
-															</a>
-														</li>
-													<?php endif ?>
-													<?php if ($twitter): ?>
-														<li>
-															<a href="<?php echo $twitter; ?>" target="_BLANK" class="twitter icon" title="Twitter">
-																<?php get_template_part('templates/svg/' . 'twitter'); ?>
-															</a>
-														</li>
-													<?php endif ?>
-													<?php if ($linkedin): ?>
-														<li>
-															<a href="<?php echo $linkedin; ?>" target="_BLANK" class="linkedin icon" title="Linkedin">
-																<?php get_template_part('templates/svg/' . 'linkedin'); ?>
-															</a>
-														</li>
-													<?php endif ?>
-												</div>
+												<?php if ($linkedin): ?>
+													<li>
+														<a href="<?php echo $linkedin; ?>" target="_BLANK" class="linkedin icon" title="Linkedin">
+															<?php get_template_part('templates/svg/' . 'linkedin'); ?>
+														</a>
+													</li>
+												<?php endif ?>
 											</div>
 											<?php if ($suite): ?>
 												<p class="suite-num"><?php echo $suite; ?></p>
 											<?php endif ?>
 										</div>
-								
-									<?php endwhile; ?>
-								<?php endif; ?>
+									</div>
+							
+								<?php endwhile; ?>
+							<?php endif; ?>
 
-							<?php endif ?> 
+							<?php endif ?>
 						<?php endwhile; ?>
-					</div>	
+					</div>
 				</div>
 			</section>
 		<?php endif ?>
+
+		<?php  
+			$tenant_categories = get_terms( 
+				array(
+			    	'taxonomy' => 'tenant_categories',
+			    	'hide_empty' => true,
+			    	'orderby' => 'menu_order'
+				)
+			);
+		?>
+
 		<?php if ($location_has_non_marketplace_tenants): ?>
 			<section class="location-tenants">
 				<div class="content-container">
-					<h2 class="section-title">Tenants</h2>
-					<div class="location-tenant-card-section">
-						
+					<div class="title-section">
+						<h2 class="dynamic-title">Tenants</h2>
+						<img src="/wp-content/uploads/2017/08/down-arrow.png" alt="arrow" class="down-arrow">
+					</div>
+					<ul class="category-select">
+						<div class="category-container">
+							<li class="mix category" data-filter="all" data-title="Tenants">All</li>
+							<?php foreach ($tenant_categories as $category): ?>
+								<li class="mix category" data-filter=".<?php echo $category->slug ?>" data-title="<?php echo $category->name ?>"><?php echo $category->name ?></li>	
+							<?php endforeach ?>
+						</div>
+					</ul>
+					<div class="tenant-card-section">
 						<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<?php if (!get_field('marketplace', $post->id)): ?>
+							<?php $termFilter = ''; 
+							$termName = '';
+							?>
+							<?php $terms = get_the_terms($post->ID, 'tenant_categories');
+							 ?>
+							<?php if (!get_field('marketplace', $post->ID)): ?>
 								
 								<?php if( have_rows('tenant_info')): ?>
 									<?php while( have_rows('tenant_info') ): the_row(); 
 								
-										$categories = get_sub_field('tenant_categories');
 										$phone = get_sub_field('phone_number');
 										$email = get_sub_field('email');
 										$website = get_sub_field('website');
@@ -168,20 +232,36 @@
 										$insta = get_sub_field('instagram_link');
 										$twitter = get_sub_field('twitter_link');
 										$linkedin = get_sub_field('linkedin');
+										$linkedin = get_sub_field('linkedin');
 										$suite = get_sub_field('suite_number');
-								
 										?>
-								
-										<div class="location-tenant-card">
+
+										<?php foreach ($terms as $term) {
+											$termFilter .= $term->slug . ' ';
+										} 
+										$termFilter = rtrim($termFilter, ' ');
+
+										?>
+									
+										<div class="location-tenant-card mix <?php echo $termFilter; ?>">
 											<div class="tenant-info">
-												
 												<h4 class="name"><?php the_title(); ?></h4>
-												<p class="category"><?php echo $categories; ?></p>
+												<?php if ($terms): ?>
+													<p class="category">
+														<?php foreach ($terms as $term) {
+															$termName .= $term->name . ', ';
+														} 
+														$termName = rtrim($termName , ', ');
+
+														echo $termName;
+														?>
+													</p>
+												<?php endif ?>
 												<?php if ($phone): ?>
-													<p class="phone"><?php echo $phone; ?></p>
+													<a href="<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a>
 												<?php endif ?>
 												<?php if ($email): ?>
-													<a href="mailto:<?php $email; ?>"><?php echo $email; ?></a>
+													<a href="<?php echo $email; ?>"><?php echo $email; ?></a>
 												<?php endif ?>
 												<?php if ($website): ?>
 													<a href="<?php echo $website; ?>"><?php echo $website; ?></a>
@@ -216,18 +296,17 @@
 														</li>
 													<?php endif ?>
 												</div>
+												<?php if ($suite): ?>
+													<p class="suite-num"><?php echo $suite; ?></p>
+												<?php endif ?>
 											</div>
-											<?php if ($suite): ?>
-												<p class="suite-num"><?php echo $suite; ?></p>
-											<?php endif ?>
 										</div>
-								
 									<?php endwhile; ?>
 								<?php endif; ?>
-
-							<?php endif ?> 
+								
+							<?php endif ?>
 						<?php endwhile; ?>
-					</div>	
+					</div>
 				</div>
 			</section>
 		<?php endif ?>

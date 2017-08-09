@@ -182,11 +182,23 @@
 }
 
 .marketplace-tenants{
-	.tenant-card-section{
+	.title-section{
+		display: flex;
+		align-items:center;
+		margin: 0 10px;
+		.dynamic-title{
+			font-size:2.5em;
+			margin-bottom:10px;
+		}
+		.down-arrow{
+			height:50px;
+		}
+	}
+	.marketplace-card-section{
 		display:flex;
 		flex-wrap:wrap;
-		.section-title{
-			margin-bottom:15px;
+		@include media($mobile){
+			flex-direction:column;
 		}
 		.marketplace-tenant-card{
 			flex-basis:31%;
@@ -194,7 +206,9 @@
 			padding:20px;
 			background-color: #efefef;
 			z-index: 3;
+			margin: 0 10px;
 			margin-bottom:15px;
+			min-height: 200px;
 			.tenant-info{
 				display:flex;
 				flex-direction:column;
@@ -207,6 +221,14 @@
 				p, a{
 					margin:5px 0;
 				}
+				a{
+					color:$color-black;
+					text-decoration: none;
+					transition: .5s;
+					&:hover{
+						color:$color-blue;
+					}
+				}
 				.social{
 					display: flex;
 					align-items: center;
@@ -214,21 +236,33 @@
 					li{
 						width:25px;
 						list-style:none;
+						svg{
+							fill:$color-black;
+							transition:.5s;
+							&:hover{
+								fill:$color-blue;
+							}
+						}
 					}
 				}
 			}
 			.suite-num{
-				font-family:$primary;
+				font-family:$suite-num;
 				position: absolute;
-			    font-size: 15em;
-			    right: 0;
-			    bottom: -10px;
+			    font-size: 13em;
+			    right: 2px;
+			    bottom: 0;
 			    color: white;
 			    line-height: 200px;
 			    display: flex;
 			    align-items: center;
-			    letter-spacing: 0;
+			    letter-spacing: -.1em;
 			    z-index: -1;
+			    pointer-events: none;
+			    @include media($mobile){
+			    	font-size:10em;
+			    	bottom:-25px;
+			    }
 			}
 		}
 	}
@@ -236,11 +270,24 @@
 
 .location-tenants{
 	margin-bottom: 25px;
-	.location-tenant-card-section{
+	.title-section{
+		display: flex;
+		position:relative;
+		margin:10px;
+		.dynamic-title{
+			font-size:2.5em;
+			cursor: pointer;
+		}
+		.down-arrow{
+			height:50px;
+			cursor: pointer;
+		}
+	}
+	.tenant-card-section{
 		display:flex;
 		flex-wrap: wrap;
-		.section-title{
-			margin-bottom:15px;
+		@include media($mobile){
+			flex-direction:column;
 		}
 		.location-tenant-card{
 			flex-basis:31%;
@@ -248,6 +295,8 @@
 			padding:20px;
 			background-color: #efefef;
 			z-index: 3;
+			min-height: 200px;
+			margin: 0 10px;
 			margin-bottom:15px;
 			.tenant-info{
 				display:flex;
@@ -261,6 +310,14 @@
 				p, a{
 					margin:5px 0;
 				}
+				a{
+					color:$color-black;
+					text-decoration: none;
+					transition: .5s;
+					&:hover{
+						color:$color-blue;
+					}
+				}
 				.social{
 					display: flex;
 					align-items: center;
@@ -268,22 +325,60 @@
 					li{
 						width:25px;
 						list-style:none;
+						svg{
+							fill:$color-black;
+							transition:.5s;
+							&:hover{
+								fill:$color-blue;
+							}
+						}
 					}
 				}
 			}
 			.suite-num{
-				font-family:$primary;
+				font-family:$suite-num;
 				position: absolute;
-			    font-size: 15em;
-			    right: 0;
-			    bottom: -10px;
-			    color: white;
+			    font-size: 13em;
+			    right: 2px;
+			    bottom: 0;
+			    color: $color-white;
 			    line-height: 200px;
 			    display: flex;
 			    align-items: center;
-			    letter-spacing: 0;
+			    letter-spacing: -.1em;
 			    z-index: -1;
+			    pointer-events: none;
+			    @include media($mobile){
+			    	font-size:10em;
+			    	bottom:-25px;
+			    }
 			}
+		}
+	}
+}
+
+//Category Select Filtering Menu
+.category-select{
+	display:none;
+	flex-wrap:wrap;
+	margin:0;
+	padding:0;
+	width:31%;
+	background-color:$color-gray;
+	margin:10px;
+	margin-bottom:15px;
+	cursor: pointer;
+	.category-container{
+		padding:10px;
+		display: flex;
+	}
+	li{
+		list-style:none;
+		font-size:1.3em;
+		transition: .5s;
+		margin:0 10px;
+		&:hover{
+			color:$color-blue;
 		}
 	}
 }
