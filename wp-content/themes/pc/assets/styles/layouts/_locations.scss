@@ -360,7 +360,6 @@
 //Category Select Filtering Menu
 .category-select{
 	display:none;
-	flex-wrap:wrap;
 	margin:0;
 	padding:0;
 	width:31%;
@@ -371,12 +370,13 @@
 	.category-container{
 		padding:10px;
 		display: flex;
+		flex-wrap:wrap;
 	}
 	li{
 		list-style:none;
 		font-size:1.3em;
 		transition: .5s;
-		margin:0 10px;
+		margin:5px 5px;
 		&:hover{
 			color:$color-blue;
 		}

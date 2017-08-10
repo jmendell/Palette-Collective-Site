@@ -81,7 +81,7 @@
 				<div class="content-container">
 					<div class="title-section">
 					<h2 class="dynamic-title">Marketplace</h2>
-					<img src="/wp-content/uploads/2017/08/down-arrow.png" alt="arrow" class="down-arrow">
+					<img src="/wp-content/uploads/2017/08/down-arrow.png " alt="arrow" class="down-arrow">
 				</div>
 				<!-- <ul class="category-select">
 					<li class="mix category" data-filter="all" data-title="Marketplace">All</li>
