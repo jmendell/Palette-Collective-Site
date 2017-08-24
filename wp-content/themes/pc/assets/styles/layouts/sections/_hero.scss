@@ -46,6 +46,11 @@
 	.credit{
 		font-size:.8em;
 	}
+	figure{
+		@include media($mobile){
+			background-position: right;
+		}
+	}
 }	
 
 $hero-min-height:700px;

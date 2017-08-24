@@ -17,16 +17,6 @@
 	') ?>
 				</div>
 			</div>
-			<div class="single-location-form">
-				<div class="col form">
-						<div class="info">
-							<?php the_title('<h3>', '</h3>'); ?>
-							<p class="address"><?php echo get_field('coordinates')['address']; ?></p>
-							<p class="cta-text">Palette is best experienced in person. Fill out your information to schedule a visit.</p>
-						</div>
-						<?php echo do_shortcode('[gravityform id=2 title=false description=false ajax=true tabindex=49]') ?>
-				</div>
-			</div>
 			<div class="col single-location-content">
 				<div class="content">
 					<h3 class="location-title"><?php the_title(); ?></h3>
@@ -50,7 +40,7 @@
 					'value'	  	=> $page_id,
 					'compare' 	=> '=',
 				)
-			)
+			),
 		);
 		$loop = new WP_Query( $args );
 		$location_has_marketplace_tenants = false;
