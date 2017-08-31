@@ -101,7 +101,7 @@ $eventLoop = new WP_Query( $eventArgs );
 								<p>Palette is best experienced in person.</p>
 								<p>Fill out your information to schedule a visit.</p>
 							</div>
-							<?php echo do_shortcode('[gravityform id=4 title=false description=false ajax=true tabindex=49]') ?>
+							<?php echo do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=49]') ?>
 						</div>
 						<div class="trigger"></div>
 					</div>

@@ -11,6 +11,7 @@
 	<div class="footer-bot">
 		<div class="content-container">
 			<p>Palette Collective Salon Suites - 2017 All Rights Reserved</p>
+			<p>Crafted By: <a href="http://sandovaldesign.com/" target="_BLANK" class="sandoval-footer">Sandoval Design</a></p>
 		</div>
 	</div>
 </footer>

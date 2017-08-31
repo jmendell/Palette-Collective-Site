@@ -35,6 +35,14 @@ footer{
 		@include media($mobile){
 			padding-bottom:65px;
 		}
+		.sandoval-footer{
+			color:$color-white;
+			text-decoration: none;
+			transition:.5s;
+			&:hover{
+				color:#DF0008;
+			}
+		}
 	}
 }
 
