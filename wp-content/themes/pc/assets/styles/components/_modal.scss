@@ -17,6 +17,9 @@
 		left:50%;
 		transform:translateX(-50%) translateY(-50%);
 		width: 80vw;
+		@include media($desktop){
+			width:40vw;
+		}
 		.form-modal-title{
 			font-size:3em;
 			text-align: center;

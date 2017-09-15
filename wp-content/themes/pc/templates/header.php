@@ -11,7 +11,7 @@
 				<span></span>
 			</div>
 		</div>
-		<a href="/locations" class="cta-button white">Join the collective</a>
+		<a href="#" class="cta-button white join-the-collective">Join the collective</a>
 	</div>
 </div>
 <div class="full-width-menu open">

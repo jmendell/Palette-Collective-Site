@@ -29,6 +29,10 @@
 						e.preventDefault();
 						_ShowModal();
 					});
+					$('.join-the-collective').click(function(e){
+						e.preventDefault();
+						_ShowModal();
+					});
 					$('#tour-sticky-footer').click(function(e){
 						e.preventDefault();
 						_ShowModal();
