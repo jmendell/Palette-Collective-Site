@@ -3,7 +3,7 @@
 		<div class="content-container">
 			<div class="contact-social">
 				<p>Contact Info</p>
-				<span class="tel" data-num="4801234567">(480) 744-4495</span>
+				<span class="tel" data-num="4801234567">(480) 359-7710</span>
 				<?php get_template_part('templates/social', 'nav'); ?>
 			</div>
 		</div>

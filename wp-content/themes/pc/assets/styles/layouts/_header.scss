@@ -196,6 +196,10 @@ header{
 			@include media($mobile){
 				flex-direction:column;
 			}
+			.social{
+				position: relative;
+				bottom:10px;
+			}
 			.connect{
 				flex:2;
 				display: flex;
@@ -205,6 +209,8 @@ header{
 				letter-spacing: 1px;
 				color:$color-black-soft;
 				padding:35px 0;
+				position: relative;
+				bottom:10px;
 				@include media($tablet){
 					padding:25px 0;
 					flex-direction: column;

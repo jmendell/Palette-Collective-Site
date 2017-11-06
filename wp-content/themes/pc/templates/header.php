@@ -29,7 +29,7 @@
 			<div class="connect">
 				<a href="mailto:info@mypalettecollective.com" class="email">info@mypalettecollective.com</a>
 				<p class="dash">-</p>
-				<a href="tel:4801234567" class="phone">(480) 123-4567</a>
+				<a href="tel:4803597710" class="phone">(480) 359-7710</a>
 			</div>
 			<div class="social">
 				<?php get_template_part('templates/social', 'nav'); ?>
