@@ -7,7 +7,6 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "../../bower_components/garnish/src/garnish.scss";
 @import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 @import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
@@ -27,6 +26,7 @@
 @import "layouts/_posts";
 @import "layouts/_events";
 @import "layouts/_locations";
+@import "layouts/_landing-pages";
 
 @import "layouts/sections/_hero";
 @import "layouts/sections/_bullets";
