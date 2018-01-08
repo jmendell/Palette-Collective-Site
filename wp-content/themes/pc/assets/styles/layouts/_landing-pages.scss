@@ -598,7 +598,6 @@ $color-yellow:#fedf17;
 					font-size:3rem;
 					line-height:3.9rem;
 					font-weight:100;
-					margin-bottom:3rem;
 					width:85%;
 					@include media($mobile){
 						font-size:2rem;
@@ -606,6 +605,10 @@ $color-yellow:#fedf17;
 				}
 				@include media($mobile){
 					padding:0;
+				}
+				.form-subtitle{
+					font-size: 1.1rem;
+					margin:25px 0;
 				}
 			}
 			.map-container{

@@ -296,7 +296,7 @@ body footer{
 					<div class="pricing-content">
 						<div class="price-copy-container">
 							<h2 class="from">from</h2>
-							<div class="suite-price"><?php the_field('suite_price'); ?><span class="week">/wk</span></div>
+							<div class="suite-price"><?php the_field('suite_price'); ?><span class="week">/<?php the_field('suite_price_week_month'); ?></span></div>
 						</div>
 						<div class="line"></div>
 						<div class="feautres">
@@ -353,6 +353,7 @@ body footer{
 			<div class="content-container flex-grid">
 				<div class="form-container flex-col-2 contact-column">
 					<h1 class="form-title uppercase"><?php the_field('contact_form_title'); ?></h1>
+					<p class="form-subtitle"><?php the_field('contact_form_subtitle'); ?></p>
 					<div class="form">
 						<?php 						
 							$form = get_field('contact_form');
